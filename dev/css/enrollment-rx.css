@@ -223,3 +223,20 @@ Overriding basic sytles with custom Bethel css
  .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
      margin: 0 -2.2em;
  }
+
+/* ================================ */
+  /* Login form styles */
+  .topPanel {
+      background:#eee;
+      padding: .5em 3em 3em;
+      border-radius: .5em;
+  }
+  
+  .topPanel input {
+      padding: .5em;
+  }
+  
+ .topPanel .btn {
+      margin-top: 2em !important;
+      padding: .65em 2em;
+  }
