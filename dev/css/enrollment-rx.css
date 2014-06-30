@@ -6,12 +6,9 @@
  @media only screen and (min-width:600px) {.header--bethel__logo img {width: auto;}}
 
  .footer--bethel {
-
     padding: 3em;
     border-top: 1px solid #ccc;
-    
-
-    /* background: #f5f5f5; */
+    line-height: .5;
 }
 .footer--bethel h1 {
     font-size: 1.5em;
@@ -224,8 +221,14 @@ Overriding basic sytles with custom Bethel css
      margin: 0 -2.2em;
  }
 
-/* ================================ */
-  /* Login form styles */
+/* ================================ 
+  Login form styles 
+================================ */
+
+.login-table {
+    margin: 0 auto;
+  }
+
   .topPanel {
       background:#eee;
       padding: .5em 3em 3em;
