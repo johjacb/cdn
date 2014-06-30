@@ -240,3 +240,22 @@ Overriding basic sytles with custom Bethel css
       margin-top: 2em !important;
       padding: .65em 2em;
   }
+
+ a.new-applicant {
+    display: table;
+    margin: 1.5em auto 1em;
+    padding: 1em 2em;
+    border-radius: .5em;
+    background: #0069aa;
+    text-align: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .login-title {
+    font-weight: bold;
+    line-height: 3;
+    font-size: 1.5em;
+  }
+
