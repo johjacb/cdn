@@ -1485,8 +1485,12 @@ a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
 .ml6, .mh6, .ma6 {
   margin-left: 6em !important; }
 
-.global--navigation ul {
-  dispaly: inline-block; }
+.global--navigation {
+  background: #ffc600; }
+
+.global--navigation ul li {
+  display: inline-block;
+  padding: .6em; }
 
 .breadcrumb p {
   font-family: 'Gotham A', 'Gotham B', sans-serif; }
