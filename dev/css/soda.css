@@ -1485,6 +1485,9 @@ a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
 .ml6, .mh6, .ma6 {
   margin-left: 6em !important; }
 
+.global--navigation ul {
+  dispaly: inline-block; }
+
 .breadcrumb p {
   font-family: 'Gotham A', 'Gotham B', sans-serif; }
 
@@ -1608,9 +1611,9 @@ a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
   display: flex;
   -webkit-align-items: center;
   align-items: center;
-  line-height: 2.5;
+  line-height: 1.5;
   margin-left: -.95em;
-  padding-left: 0em;
+  padding: .5em 1em .5em 0;
   font-size: 14.4px;
   font-size: 0.9rem; }
 
@@ -1619,6 +1622,9 @@ a.accordion-list__link {
   flex-grow: 1;
   color: #757e8e;
   padding-right: 1em; }
+
+.accordion-list__link--active {
+  font-weight: 500; }
 
 .accordion-list__button {
   min-width: 1em;
