@@ -1549,17 +1549,6 @@ a.accordion-list__link {
   border: 0;
   margin-left: 0; }
 
-.first-level > li {
-  border-top: 1px solid #ddd;
-  margin-left: -2.2em; }
-
-.first-level > li > a {
-  font-weight: 500;
-  color: tomato;
-  font-size: 16px;
-  font-size: 1rem;
-  padding: .5em 1em .5em 0; }
-
 .second-level {
   border-left: 0;
   margin-left: -1em;
