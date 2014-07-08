@@ -1488,6 +1488,10 @@ a.accordion-list__link {
     .nav--secondary {
       margin: 0; } }
 
+@media screen and (min-width: 60em) {
+  .nav--secondary__top-link {
+    display: none; } }
+
 .nav--secondary__title {
   font-size: 140%;
   padding: .7em;
