@@ -1570,6 +1570,14 @@ a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
 .ml6, .mh6, .ma6 {
   margin-left: 6em !important; }
 
+.table--basic {
+  width: 100%;
+  font-size: 90%; }
+
+.table--basic__td {
+  padding: .7em;
+  border: 1px solid #ddd; }
+
 .global--navigation {
   background: #fff;
   overflow: auto;
