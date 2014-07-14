@@ -1570,11 +1570,11 @@ a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
 .ml6, .mh6, .ma6 {
   margin-left: 6em !important; }
 
-.table--basic {
+table {
   width: 100%;
   font-size: 90%; }
 
-.table--basic__td {
+table td {
   padding: .7em;
   border: 1px solid #ddd; }
 
