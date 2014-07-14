@@ -422,6 +422,9 @@ a, a:visited {
   text-decoration: none;
   color: #0079c3; }
 
+.teaser {
+  font-size: 150%; }
+
 .demo {
   background: tomato;
   text-align: center;
