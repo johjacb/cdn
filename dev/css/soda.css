@@ -363,8 +363,7 @@ th {
 */
 /* Responsive Utilities */
 img, canvas, iframe, video, svg {
-  max-width: 100%;
-  height: auto; }
+  max-width: 100%; }
 
 /* Wrap tables or pre elements in a div with this class */
 .overflow-container {
