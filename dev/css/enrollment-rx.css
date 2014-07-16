@@ -146,7 +146,7 @@ Overriding basic sytles with custom Bethel css
 }
  
  .bPageBlock .detailList .labelCol {
-     padding: 2em;
+     xpadding: 2em;
      vertical-align: middle;
      text-align: right;
 }
@@ -189,7 +189,7 @@ Overriding basic sytles with custom Bethel css
  
  .editPage .bPageBlock .detailList tr td, .editPage .bPageBlock .detailList tr th {
      vertical-align: middle;
-     padding: 1em;
+     padding: 1em !important;
 }
  
  /* Event registration title */
