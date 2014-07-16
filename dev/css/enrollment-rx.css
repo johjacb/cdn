@@ -122,7 +122,7 @@ Overriding basic sytles with custom Bethel css
 }
  
  .detailList td {
-     padding: 1em !important;
+     padding: .75em !important;
      vertical-align: middle !important;
 }
 
@@ -131,6 +131,8 @@ Overriding basic sytles with custom Bethel css
 .editPage .bPageBlock .detailList tr th {
     border-bottom: 1px solid #eee;
     vertical-align: middle;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 /* Removing the border from the last tr in the table */
@@ -146,6 +148,7 @@ Overriding basic sytles with custom Bethel css
  .bPageBlock .detailList .labelCol {
      padding: 2em;
      vertical-align: middle;
+     text-align: right;
 }
  
  /* Labels */
@@ -153,6 +156,7 @@ Overriding basic sytles with custom Bethel css
      font-size: 14px;
      font-weight: normal;
      color: #667;
+     text-align: right !important;
 }
  
  .bPageBlock {
@@ -185,7 +189,7 @@ Overriding basic sytles with custom Bethel css
  
  .editPage .bPageBlock .detailList tr td, .editPage .bPageBlock .detailList tr th {
      vertical-align: middle;
- }
+}
  
  /* Event registration title */
  .title {
