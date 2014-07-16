@@ -189,6 +189,7 @@ Overriding basic sytles with custom Bethel css
  
  .editPage .bPageBlock .detailList tr td, .editPage .bPageBlock .detailList tr th {
      vertical-align: middle;
+     padding: 1em;
 }
  
  /* Event registration title */
