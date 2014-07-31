@@ -183,7 +183,7 @@ Overriding basic sytles with custom Bethel css
  }
  
  /* For the covenant page */
- iframe {
+ iframe [src~="covenant"]{
      border: 1px solid #333;
  }
  
