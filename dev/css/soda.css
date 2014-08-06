@@ -1192,10 +1192,16 @@ a, a:visited {
   font-weight: 500;
   text-transform: uppercase; }
 
-.breadcrumb a {
-  padding: 0 .6em; }
-  .breadcrumb a:first-child {
-    padding-left: 0; }
+.breadcrumb a:first-child {
+  padding-left: 0; }
+
+.breadcrumb a:before {
+  content: "›";
+  padding: 0 1em; }
+
+.breadcrumb a:first-child:before {
+  content: "";
+  padding: 0; }
 
 /**
 
