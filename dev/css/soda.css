@@ -1812,6 +1812,9 @@ a.accordion-list__link {
   font-family: "Gotham A", "Gotham B", Helvetica, Arial, sans;
   font-size: .8rem; }
 
+.site__features--gray {
+  background: #e3e3e3; }
+
 /*------------------------------------*\
     $BEAUTONS.CSS
 \*------------------------------------*/
