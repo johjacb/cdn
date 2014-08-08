@@ -1815,6 +1815,16 @@ a.accordion-list__link {
 .site__features--gray {
   background: #e3e3e3; }
 
+.site__features__tag {
+  text-transform: uppercase;
+  padding-bottom: .5em;
+  margin: 0 auto 3em;
+  letter-spacing: 3px;
+  font-size: .75em;
+  display: table;
+  text-align: center;
+  border-bottom: 1px solid #333; }
+
 /*------------------------------------*\
     $BEAUTONS.CSS
 \*------------------------------------*/
@@ -2016,7 +2026,7 @@ a.accordion-list__link {
   border-radius: 0; }
 
 .media-box-pad {
-  paddding: 0 1em; }
+  padding: 0 1em; }
 
 .center {
   margin: 0 auto;
