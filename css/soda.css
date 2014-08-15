@@ -1931,7 +1931,7 @@ table td {
       font-size: 2rem; } }
 
 .school__navigation ul {
-  padding: 0 0 0 1em;
+  padding: 0;
   margin: 0;
   line-height: 1.5;
   vertical-align: middle; }
@@ -1948,6 +1948,9 @@ table td {
 
 .js .school__navigation ul li {
   display: table-cell; }
+
+.school__navigation a {
+  padding: 0  .25em; }
 
 .school__navigation a.active {
   background: #ccc;
