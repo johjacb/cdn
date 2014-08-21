@@ -457,7 +457,7 @@ a, a:visited {
 /*------------------------------------*\
     $GRID
 \*------------------------------------*/
-.flexbox .grid {
+.grid {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
