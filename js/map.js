@@ -93,7 +93,7 @@ function createLocationSelect(map) {
         }
         $('#office_select').html($select);
         $select.change(function() {
-            parkingSelectChange(getCurrentlySelectedLocation($(this).val()));
+            officeSelectChange(getCurrentlySelectedLocation($(this).val()));
         });
     }
 
@@ -130,6 +130,20 @@ function getCurrentlySelectedLocation(location) {
 function locationSelectChange(location) {
     var mapObj = locations[location.type][location.map];
     var locationObj = mapObj.locations[location.location];
+    var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
+
+    if (location.type == 'single') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
+    } else if (location.type == 'collection') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
+    }
+}
+
+function officeSelectChange(location) {
+    var mapObj = locations[location.type][location.map];
+    var locationObj = mapObj.offices[location.location];
     var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
     if (location.type == 'single') {
