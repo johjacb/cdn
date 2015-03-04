@@ -79,4 +79,6 @@ li.section.notification div[id*=instruct] {
 	height: auto;
 }
 
-
+.wufoo .running li.section.first {
+	width: 100% !important;
+}
