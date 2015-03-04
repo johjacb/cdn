@@ -72,7 +72,11 @@ li.section.notification div[id*=instruct] {
 
 #lola {
 	position: relative;
-	width: 100%;
+	width: 90%;
+}
+
+.wufoo li.total {
+	height: auto;
 }
 
 
