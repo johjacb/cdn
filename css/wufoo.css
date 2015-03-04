@@ -1,0 +1,78 @@
+#container, html.embed {
+    background: none;
+}
+
+#nav2 {
+	padding: 2em;
+}
+.wufoo li {
+    margin-bottom: 10px;
+}
+.wufoo .info {
+    border-bottom: none;
+}
+.wufoo .info h2 {
+    display: none;
+}
+.wufoo .section div[id*=instruct] {
+    font-size: 14px;
+}
+.wufoo.hideHeader .info {
+    display: block;
+}
+.wufoo li.section-title h3, .wufoo .section h3 {
+    border-top: none;
+    /* === Styles taken from all.css ===== */
+    
+    font-size: 20px;
+    font-size: 1.42857142857143rem;
+    color: #555;
+    font-weight: 700;
+    margin: 0 0 .2em;
+    line-height: 1.526;
+    // font-family: "skolar-1", "skolar-2", Georgia, Times, "Times New Roman", serif, Georgia, "Times New Roman", Times, serif;
+    background: none;
+}
+.wufoo .subheading h3 {
+    font-size: 16px;
+    font-weight: 700;
+    // font-family: "skolar-1", "skolar-2", Georgia, Times, "Times New Roman", serif, Georgia, "Times New Roman", Times, serif;
+}
+#errorLi {
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.notification {
+    width: 99%;
+    margin: 15px auto 15px auto;
+    background: #fff !important;
+    border: 2px solid orange;
+    text-align: center;
+    padding: 1em 0 1em 0;
+}
+li.section.notification h3 {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif !important;
+    font-weight: bold !important;
+    color: orange;
+    background: none;
+}
+li.section.notification div[id*=instruct] {
+    font: normal 14px/18px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+}
+#container.confirm h2 {
+    text-align: left;
+    font-size: 120%;
+}
+#container .invisible {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    height: 1px;
+}
+
+#lola {
+	position: relative;
+	width: 100%:
+}
+
+
