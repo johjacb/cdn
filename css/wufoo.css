@@ -70,10 +70,10 @@ li.section.notification div[id*=instruct] {
     height: 1px;
 }
 
-#lola {
-	position: relative;
-	width: 90%;
-}
+// #lola {
+// 	position: relative;
+// 	width: 90%;
+// }
 
 .wufoo li.total {
 	height: auto;
