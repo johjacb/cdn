@@ -196,17 +196,26 @@ var bu_fx = {
         if (window_manager.scrollTop < 100) {
             // Reset the animation if the user goes to the top.
             this.proofPointAnimationReady = true;
+            this.resetProofpoints();
             $('.homepage-animate').removeClass('js-fade-in');
             this.hideProofPoints();
         }
 
     },
 
+    resetProofpoints : function(){
+        var elements = document.getElementsByClassName('odometer');
+        for (var index = 0; index < elements.length; ++index) {
+            var element = elements[index];
+            element.innerHTML = 0;
+        }
+    },
+
     animateProofPoints : function() {
         setTimeout(function(){
             var elements = document.getElementsByClassName('odometer');
             var index;
-            for (index = 0; index < elements.length; ++index) {
+            for (var index = 0; index < elements.length; ++index) {
                 var element = elements[index];
                 var number = element.dataset.finalNumber;
                 element.innerHTML = number;
