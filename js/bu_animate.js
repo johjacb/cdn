@@ -271,7 +271,100 @@ var bu_fx = {
                 $elem.html(original_num);
             }
         });
+    },
+
+    /*  Rotating statements
+     \*------------------------------------*/
+    campaignIdeas : [
+        'faith.',
+        'academics.',
+        'community.',
+        'each other.',
+        'our neighbors.',
+        'making a difference.',
+        'living out our faith.',
+        'excellence.'
+    ],
+
+    rotateStatements : function (options) {
+
+        var module = this;
+        module.settings = {};
+        var interval;
+        var currentStatement = 0;
+        var defaults = {
+            startDelay: 0,
+            statements: null,
+            containerElement: null,
+            textElement: null,
+            debug: false
+        };
+
+        var init = function () {
+            module.settings = $.extend({}, defaults, options);
+            module.statement_count = module.settings.statements.length;
+            module.autoRotateStatements();
+        };
+
+        // Console logging for debugging
+        var c = function (x) {
+            if (module.settings.debug) {
+                console.log(x);
+            }
+        };
+
+        // Show a new statement then begin cycling the statements
+        module.autoRotateStatements = function () {
+            c('FUNCTION: autoRotateStatements');
+            clearInterval(interval);
+            interval = setInterval(module.showStatement, module.settings.speed);
+        };
+
+
+        module.changeText = function() {
+            // Update the text after a delay.
+            // The delay is necessary because the text has to fade before we change it
+            setTimeout(function () {
+                $(module.settings.textElement).velocity({opacity:0}, 600);
+                $(module.settings.textElement).text(module.settings.statements[currentStatement]);
+                $(module.settings.containerElement).width($(module.settings.textElement).width());
+            }, module.settings.speed/8);
+
+        };
+
+        // reveal the text after delay
+        module.revealText = function() {
+            setTimeout(function () {
+                $(module.settings.textElement).velocity({opacity:1}, 600);
+            }, module.settings.speed/4);
+        }
+
+        // Show new statement
+        module.showStatement = function () {
+
+            // Get the next statement
+            currentStatement += 1;
+            if (currentStatement > module.statement_count-1) { currentStatement = 0; }
+
+            c('FUNCTION: showStatement #' + currentStatement);
+            $(module.settings.textElement).velocity({opacity:0}, 600);
+            module.changeText();
+            module.revealText();
+
+        };
+
+        // Pause
+        module.pause = function () {
+            c('FUNCTION: pause');
+            window.clearInterval(interval);
+        };
+
+        init();
+
+        return module;
+
     }
+
 };
 
 $(document).ready( function() {
@@ -279,4 +372,13 @@ $(document).ready( function() {
 });
 $(window).load(function(){
     bu_fx.setupFX();
+    bu_fx.rotateStatements(
+        {
+            speed: 4000,
+            containerElement: $('.rotate_text').find('h2 span'),
+            textElement: $('.rotate_text').find('h2 span em'),
+            statements: bu_fx.campaignIdeas,
+            debug: false
+        }
+    );
 });
