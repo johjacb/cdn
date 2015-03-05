@@ -199,7 +199,6 @@ var bu_fx = {
             this.proofPointAnimationReady = true;
             this.resetProofpoints();
             $('.homepage-animate').removeClass('js-fade-in');
-            this.hideProofPoints();
         }
 
     },
