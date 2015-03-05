@@ -205,11 +205,13 @@ var bu_fx = {
 
     resetProofpoints : function(){
         var elements = document.getElementsByClassName('odometer');
+        // update the speed so the animation isn't going on if someone scrolls update and down real fast
+        window.odometerOptions = { duration: 1 };
         for (var index = 0; index < elements.length; ++index) {
             var element = elements[index];
-            // remove the class so the animation doesn't happen
             element.innerHTML = 0;
         }
+        window.odometerOptions = { duration: 3000 };
     },
 
     animateProofPoints : function() {
