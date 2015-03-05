@@ -134,6 +134,7 @@ var bu_fx = {
          *************************/
         this.$proofPoints = $(".grid.proof-points");
         this.ppStartPX = this.$proofPoints.offset().top;
+        bu_fx.enable();
     },
 
     // Re-run as needed.
