@@ -138,21 +138,7 @@ var bu_fx = {
 
     // Re-run as needed.
     enable : function() {
-
-        // DO ENABLE TASKS
-        try {
-
-            // Do not initialize Skrollr on mobile.
-            if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-                bu_fx.skrollr = skrollr.init();
-            }
-
-        } catch (e) {
-            // No Skrollr support
-        }
-
         this.proofPointAnimationReady = true;
-
         bu_fx.enabled = true;
     },
 
@@ -167,8 +153,8 @@ var bu_fx = {
 
     // Fire on scroll to position elements
     process : function() {
+        bu_fx.enable();
         //if (!bu_fx.enabled && window_manager.windowWidth > 640) {
-        //    bu_fx.enable();
         //}
         //} else if (bu_fx.enabled && window_manager.windowWidth < 640) {
         //    bu_fx.disable();
