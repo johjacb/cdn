@@ -191,7 +191,7 @@ var bu_fx = {
                 var elem = $(this);
 
                 setTimeout(function () {
-                    elem.addClass('js-animate');
+                    elem.addClass('js-fade-in');
                 }, 600 * i);
             });
 
