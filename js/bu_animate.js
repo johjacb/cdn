@@ -211,14 +211,11 @@ var bu_fx = {
             var $number = $(this).find('.proof-point__number');
             var $text = $(this).find('.proof-point__text_below');
 
-            $number.css('opacity', 0);
-            $text.css('opacity', 0);
-
             setTimeout(function() {
                 bu_fx.animateSingleNumber($number);
 
-                $number.velocity({opacity:1}, 600);
-                $text.velocity({opacity:1}, 400);
+                $number.addClass('js-fadeIn');
+                $text.addClass('js-fadeIn');
 
             }, 100 * Math.floor((Math.random()*10)+1));
 
@@ -275,15 +272,23 @@ var bu_fx = {
 
     /*  Rotating statements
      \*------------------------------------*/
-    campaignIdeas : [
-        'faith.',
-        'academics.',
-        'community.',
-        'each other.',
-        'our neighbors.',
-        'making a difference.',
-        'living out our faith.',
-        'excellence.'
+    committedPhrases : [
+        'challenging ourselves',
+        'supporting each other',
+        'community',
+        'laughing...a lot',
+        'learning inside and outside the classroom',
+        'faith',
+        'making a difference',
+        'serving our neighbors',
+        'exploring the world',
+        'hope',
+        'hard work',
+        'big dreams',
+        'living with purpose',
+        'fun',
+        'asking important questions',
+        'spreading Christ’s love'
     ],
 
     rotateStatements : function (options) {
@@ -325,7 +330,6 @@ var bu_fx = {
             // Update the text after a delay.
             // The delay is necessary because the text has to fade before we change it
             setTimeout(function () {
-                $(module.settings.textElement).velocity({opacity:0}, 600);
                 $(module.settings.textElement).text(module.settings.statements[currentStatement]);
                 $(module.settings.containerElement).width($(module.settings.textElement).width());
             }, module.settings.speed/8);
@@ -347,9 +351,17 @@ var bu_fx = {
             if (currentStatement > module.statement_count-1) { currentStatement = 0; }
 
             c('FUNCTION: showStatement #' + currentStatement);
-            $(module.settings.textElement).velocity({opacity:0}, 600);
-            module.changeText();
-            module.revealText();
+
+            $(module.settings.containerElement).addClass('js-wordAnimate');
+
+            setTimeout(function () {
+                $(module.settings.textElement).text(module.settings.statements[currentStatement]);
+                $(module.settings.containerElement).width($(module.settings.textElement).width());
+            }, module.settings.speed/8);
+
+            setTimeout(function () {
+                $(module.settings.containerElement).removeClass('js-wordAnimate');
+            }, module.settings.speed/4);
 
         };
 
@@ -377,7 +389,7 @@ $(window).load(function(){
             speed: 4000,
             containerElement: $('.rotate_text').find('h2 span'),
             textElement: $('.rotate_text').find('h2 span em'),
-            statements: bu_fx.campaignIdeas,
+            statements: bu_fx.committedPhrases,
             debug: false
         }
     );
