@@ -211,7 +211,9 @@ var bu_fx = {
             var element = elements[index];
             element.innerHTML = 0;
         }
-        window.odometerOptions = { duration: 3000 };
+        setTimeout(function() {
+            window.odometerOptions = {duration: 3000};
+        }, 100);
     },
 
     animateProofPoints : function() {
