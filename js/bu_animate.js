@@ -2,6 +2,27 @@
  * Created by ejc84332 on 3/4/15.
  */
 
+function ordinal_suffix_of(i){
+    var j = i % 10,
+        k = i % 100;
+    if (j == 1 && k != 11) {
+        return "st";
+    }
+    if (j == 2 && k != 12) {
+        return "nd";
+    }
+    if (j == 3 && k != 13) {
+        return "rd";
+    }
+    if(i == 0){
+        return '';
+    }
+    return "th";
+}
+
+function isNumeric(obj) {
+    return obj - parseFloat(obj) >= 0;
+}
 
 var window_manager = {
 
@@ -19,12 +40,9 @@ var window_manager = {
     windowHeight    : null,
     scrollTop       : null,
     scrollBot       : null,
-    getVars         : null,
 
     initialize : function() {
         window_manager.useParallax = true;
-
-
         // is android
         var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
         // ios detection
@@ -117,7 +135,7 @@ var bu_fx = {
         this.$proofPoints = $(".grid.proof-points");
         this.ppStartPX = this.$proofPoints.offset().top;
 
-        this.$proofPoints.find('.fade-elem').css('opacity', 0); // prep for fade in
+        $('.fade-elem').css('opacity', 0); // prep for fade in
 
     },
 
@@ -166,12 +184,15 @@ var bu_fx = {
         if (this.proofPointAnimationReady && window_manager.scrollBot > this.ppStartPX ) {
             this.animateProofPoints();
 
-            //this.$undergraduateAdmission.find('.fade-elem').each(function (i) {
-            //    var $elem = $(this);
-            //    setTimeout(function () {
-            //        $elem.animate({'opacity': '1'}, 1000, 'linear');
-            //    }, 600 * i);
-            //});
+
+            // fade in the text aboce
+            $('.fade-elem').each(function (i) {
+                //$(this).find('.uppercase-underlined');
+                var $elem = $(this);
+                setTimeout(function () {
+                    $elem.velocity({'opacity': '1'}, 1000, 'linear');
+                }, 600 * i);
+            });
 
             this.proofPointAnimationReady = false;
 
@@ -188,7 +209,7 @@ var bu_fx = {
 
         this.$proofPoints.find(".grid-cell").each(function(i) {
             var $number = $(this).find('.proof-point__number');
-            var $text = $(this).find('.proof-point__text_below'); //.html().split("<br>")[1]; // kinda hacky for now
+            var $text = $(this).find('.proof-point__text_below');
 
             $number.css('opacity', 0);
             $text.css('opacity', 0);
@@ -196,8 +217,8 @@ var bu_fx = {
             setTimeout(function() {
                 bu_fx.animateSingleNumber($number);
 
-                $number.animate({opacity:1}, 600);
-                $text.animate({opacity:1}, 400);
+                $number.velocity({opacity:1}, 600);
+                $text.velocity({opacity:1}, 400);
 
             }, 100 * Math.floor((Math.random()*10)+1));
 
@@ -213,7 +234,7 @@ var bu_fx = {
         if (!final_num) final_num = parseFloat($elem.html().replace(/,/,''));
 
         // If not set, count up from zero
-        if (!start_num) start_num = 0;
+        if (!start_num) start_num = '0%';
 
         // If no set, default duration
         if (!duration) duration = 1000;
@@ -225,24 +246,31 @@ var bu_fx = {
         var goodLocaleStringSupport = (new Number(10).toLocaleString() == '10');
 
         //Parking count animation
-        $({countNum: 0})
-            .animate({countNum: final_num},{
-                duration: duration,
-                easing: 'swing',
-                step: function() {
+        $({countNum: 0}).animate({countNum: final_num},{
+            duration: duration,
+            easing: 'swing',
+            step: function() {
 
-                    // Round to decimal places
-                    var stepNum = this.countNum.toFixed(decimalPlaces);
+                // Round to decimal places
+                var stepNum = this.countNum.toFixed(decimalPlaces);
 
-                    // Add a comma if not a decimal
-                    if (decimalPlaces == 0 && goodLocaleStringSupport) stepNum = parseInt(stepNum).toLocaleString('en');
+                // Add a comma if not a decimal
+                if (decimalPlaces == 0 && goodLocaleStringSupport) stepNum = parseInt(stepNum).toLocaleString('en');
 
-                    $elem.html(stepNum);
-                },
-                complete:function() {
-                    $elem.html(original_num);
+                var suffix = '';
+                if(original_num.substr(-1) == '%'){
+                    suffix = '%';
+                }else if(!isNumeric(original_num.substr(-1))){
+                    suffix = ordinal_suffix_of(stepNum);
                 }
-            });
+
+                $elem.html(stepNum + suffix);
+            },
+            complete:function() {
+
+                $elem.html(original_num);
+            }
+        });
     }
 };
 
@@ -251,6 +279,4 @@ $(document).ready( function() {
 });
 $(window).load(function(){
     bu_fx.setupFX();
-
 });
-// cu_parallax_fx.skrollr = skrollr.init();
