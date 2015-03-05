@@ -209,8 +209,12 @@ var bu_fx = {
 
     hideProofPoints: function(){
         this.$proofPoints.find(".grid-cell").each(function(i) {
+            var $number = $(this).find('.proof-point__number');
+            var $text = $(this).find('.proof-point__text_below');
             $number.css('opacity', 0);
             $text.css('opacity', 0);
+            $number.removeClass('js-fadeIn');
+            $text.removeClass('js-fadeIn');
         });
     },
 
