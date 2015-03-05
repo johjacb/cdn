@@ -169,9 +169,10 @@ var bu_fx = {
     process : function() {
         if (!bu_fx.enabled && window_manager.windowWidth > 640) {
             bu_fx.enable();
-        } else if (bu_fx.enabled && window_manager.windowWidth < 640) {
-            bu_fx.disable();
         }
+        //} else if (bu_fx.enabled && window_manager.windowWidth < 640) {
+        //    bu_fx.disable();
+        //}
 
         if (!bu_fx.enabled) return false;
 
