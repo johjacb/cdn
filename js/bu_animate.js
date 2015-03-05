@@ -185,13 +185,13 @@ var bu_fx = {
             this.animateProofPoints();
 
 
-
             // fade in the text aboce
-            $('.fade-elem').each(function (i) {
+            $('js-animate').each(function (i) {
                 //$(this).find('.uppercase-underlined');
-                var $elem = $(this);
+                var elem = $(this);
+
                 setTimeout(function () {
-                    $elem.addClass('js-fadeIn');
+                    elem.addClass('js-animate');
                 }, 600 * i);
             });
 
@@ -213,8 +213,8 @@ var bu_fx = {
             var $text = $(this).find('.proof-point__text_below');
             $number.css('opacity', 0);
             $text.css('opacity', 0);
-            $number.removeClass('js-fadeIn');
-            $text.removeClass('js-fadeIn');
+            $number.removeClass('js-animate');
+            $text.removeClass('js-animate');
         });
     },
 
@@ -231,8 +231,8 @@ var bu_fx = {
             setTimeout(function() {
                 bu_fx.animateSingleNumber($number);
 
-                $number.addClass('js-fadeIn');
-                $text.addClass('js-fadeIn');
+                $number.addClass('js-animate');
+                $text.addClass('js-animate');
 
             }, 100 * Math.floor((Math.random()*10)+1));
 
