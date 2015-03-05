@@ -186,14 +186,11 @@ var bu_fx = {
 
 
             // fade in the text aboce
-            $('.homepage-animate').each(function (i) {
-                //$(this).find('.uppercase-underlined');
-                var elem = $(this);
+            var elem = $('.homepage-animate');
 
-                setTimeout(function () {
-                    elem.addClass('js-fade-in');
-                }, 600 * i);
-            });
+            setTimeout(function () {
+                elem.addClass('js-fade-in');
+            }, 600 * i);
 
             this.proofPointAnimationReady = false;
 
