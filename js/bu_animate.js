@@ -349,7 +349,7 @@ var bu_fx = {
 
             c('FUNCTION: showStatement #' + currentStatement);
 
-            $(module.settings.containerElement).addClass('js-wordAnimate');
+            $(module.settings.textElement).addClass('js-wordAnimate');
 
             setTimeout(function () {
                 $(module.settings.textElement).text(module.settings.statements[currentStatement]);
@@ -357,7 +357,7 @@ var bu_fx = {
             }, module.settings.speed/8);
 
             setTimeout(function () {
-                $(module.settings.containerElement).removeClass('js-wordAnimate');
+                $(module.settings.textElement).removeClass('js-wordAnimate');
             }, module.settings.speed/4);
 
         };
