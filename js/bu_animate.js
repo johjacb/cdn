@@ -190,7 +190,7 @@ var bu_fx = {
 
             setTimeout(function () {
                 elem.addClass('js-fade-in');
-            }, 600 * i);
+            }, 600);
 
             this.proofPointAnimationReady = false;
 
