@@ -202,23 +202,16 @@ var bu_fx = {
 
     },
 
-
     animateProofPoints : function() {
-
-        this.$proofPoints.find(".grid-cell").each(function(i) {
-            var $number = $(this).find('.proof-point__number');
-            var $text = $(this).find('.proof-point__text_below');
-
-            setTimeout(function() {
-                bu_fx.animateSingleNumber($number);
-
-                $number.addClass('js-animate');
-                $text.addClass('js-animate');
-
-            }, 100 * Math.floor((Math.random()*10)+1));
-
-        });
-
+        setTimeout(function(){
+            var elements = document.getElementsByClassName('odometer');
+            var index;
+            for (index = 0; index < elements.length; ++index) {
+                var element = elements[index];
+                var number = element.dataset.finalNumber;
+                element.innerHTML = number;
+            }
+        }, 1000);
     },
 
 
