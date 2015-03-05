@@ -202,9 +202,18 @@ var bu_fx = {
         if (window_manager.scrollTop < 100) {
             // Reset the animation if the user goes to the top.
             this.proofPointAnimationReady = true;
+            this.hideProofPoints();
         }
 
     },
+
+    hideProofPoints: function(){
+        this.$proofPoints.find(".grid-cell").each(function(i) {
+            $number.css('opacity', 0);
+            $text.css('opacity', 0);
+        });
+    },
+
 
     animateProofPoints : function() {
 
