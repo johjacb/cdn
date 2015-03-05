@@ -186,7 +186,7 @@ var bu_fx = {
 
 
             // fade in the text aboce
-            $('homepage-animate').each(function (i) {
+            $('.homepage-animate').each(function (i) {
                 //$(this).find('.uppercase-underlined');
                 var elem = $(this);
 
