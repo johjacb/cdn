@@ -135,8 +135,8 @@ var bu_fx = {
         this.$proofPoints = $(".grid.proof-points");
         this.ppStartPX = this.$proofPoints.offset().top;
 
-        $('.fade-elem').css('opacity', 0); // prep for fade in
-
+        $('.homepage-animate').css('opacity', 0); // prep for fade in
+        $('.homepage-animate').removeClass('js-fade-in');
     },
 
     // Re-run as needed.
