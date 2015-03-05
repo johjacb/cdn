@@ -134,8 +134,6 @@ var bu_fx = {
          *************************/
         this.$proofPoints = $(".grid.proof-points");
         this.ppStartPX = this.$proofPoints.offset().top;
-
-        $('.homepage-animate').removeClass('js-fade-in');
     },
 
     // Re-run as needed.
@@ -198,6 +196,7 @@ var bu_fx = {
         if (window_manager.scrollTop < 100) {
             // Reset the animation if the user goes to the top.
             this.proofPointAnimationReady = true;
+            $('.homepage-animate').removeClass('js-fade-in');
             this.hideProofPoints();
         }
 
