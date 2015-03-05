@@ -202,26 +202,12 @@ var bu_fx = {
 
     },
 
-    hideProofPoints: function(){
-        this.$proofPoints.find(".grid-cell").each(function(i) {
-            var $number = $(this).find('.proof-point__number');
-            var $text = $(this).find('.proof-point__text_below');
-            $number.css('opacity', 0);
-            $text.css('opacity', 0);
-            $number.removeClass('js-animate');
-            $text.removeClass('js-animate');
-        });
-    },
-
 
     animateProofPoints : function() {
 
         this.$proofPoints.find(".grid-cell").each(function(i) {
             var $number = $(this).find('.proof-point__number');
             var $text = $(this).find('.proof-point__text_below');
-
-            $number.css('opacity', 0);
-            $text.css('opacity', 0);
 
             setTimeout(function() {
                 bu_fx.animateSingleNumber($number);
@@ -235,52 +221,6 @@ var bu_fx = {
 
     },
 
-    animateSingleNumber : function($elem, final_num, start_num, duration) {
-
-        var original_num = $elem.html();
-
-        // If not set, take inner HTML of elem
-        if (!final_num) final_num = parseFloat($elem.html().replace(/,/,''));
-
-        // If not set, count up from zero
-        if (!start_num) start_num = '0%';
-
-        // If no set, default duration
-        if (!duration) duration = 1000;
-
-        // Find number of decimal places
-        var decimalPlaces = (Math.floor(final_num) !== final_num) ? final_num.toString().split(".")[1].length || 0 : 0;
-
-        // Test for correct EN locale string conversion
-        var goodLocaleStringSupport = (new Number(10).toLocaleString() == '10');
-
-        //Parking count animation
-        $({countNum: 0}).animate({countNum: final_num},{
-            duration: duration,
-            easing: 'swing',
-            step: function() {
-
-                // Round to decimal places
-                var stepNum = this.countNum.toFixed(decimalPlaces);
-
-                // Add a comma if not a decimal
-                if (decimalPlaces == 0 && goodLocaleStringSupport) stepNum = parseInt(stepNum).toLocaleString('en');
-
-                var suffix = '';
-                if(original_num.substr(-1) == '%'){
-                    suffix = '%';
-                }else if(!isNumeric(original_num.substr(-1))){
-                    suffix = ordinal_suffix_of(stepNum);
-                }
-
-                $elem.html(stepNum + suffix);
-            },
-            complete:function() {
-
-                $elem.html(original_num);
-            }
-        });
-    },
 
     /*  Rotating statements
      \*------------------------------------*/
