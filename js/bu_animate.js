@@ -185,6 +185,7 @@ var bu_fx = {
             this.animateProofPoints();
 
 
+
             // fade in the text aboce
             $('.fade-elem').each(function (i) {
                 //$(this).find('.uppercase-underlined');
@@ -210,6 +211,9 @@ var bu_fx = {
         this.$proofPoints.find(".grid-cell").each(function(i) {
             var $number = $(this).find('.proof-point__number');
             var $text = $(this).find('.proof-point__text_below');
+
+            $number.css('opacity', 0);
+            $text.css('opacity', 0);
 
             setTimeout(function() {
                 bu_fx.animateSingleNumber($number);
