@@ -43,30 +43,30 @@ var window_manager = {
 
     initialize : function() {
         window_manager.useParallax = true;
-        // is android
-        var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
-        // ios detection
-        var isIOS = false;
-        var iDevice = ['iPad', 'iPhone', 'iPod'];
-        for ( var i = 0 ; i < iDevice.length ; i++ ) {
-            if( navigator.platform === iDevice[i] ){
-                isIOS = true;
-                break;
-            }
-        }
-
-        // Determine if this device cannot autoplay HTML5 video
-        if (isAndroid || isIOS) {
-            window_manager.cannotAutoplayVideo = true;
-            window_manager.useTransitions = true;
-        }
-
-        if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-            window_manager.useParallax = true;
-            bu_fx.setupFX();
-        } else {
-            window_manager.useParallax = false;
-        }
+        //// is android
+        //var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+        //// ios detection
+        //var isIOS = false;
+        //var iDevice = ['iPad', 'iPhone', 'iPod'];
+        //for ( var i = 0 ; i < iDevice.length ; i++ ) {
+        //    if( navigator.platform === iDevice[i] ){
+        //        isIOS = true;
+        //        break;
+        //    }
+        //}
+        //
+        //// Determine if this device cannot autoplay HTML5 video
+        //if (isAndroid || isIOS) {
+        //    window_manager.cannotAutoplayVideo = true;
+        //    window_manager.useTransitions = true;
+        //}
+        //
+        //if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+        //    window_manager.useParallax = true;
+        //    bu_fx.setupFX();
+        //} else {
+        //    window_manager.useParallax = false;
+        //}
 
         // Set up window change events
         if (window.addEventListener) {
@@ -205,15 +205,10 @@ var bu_fx = {
 
     resetProofpoints : function(){
         var elements = document.getElementsByClassName('odometer');
-        // update the speed so the animation isn't going on if someone scrolls update and down real fast
-        window.odometerOptions = { duration: 1 };
         for (var index = 0; index < elements.length; ++index) {
             var element = elements[index];
             element.innerHTML = 0;
         }
-        setTimeout(function() {
-            window.odometerOptions = {duration: 3000};
-        }, 100);
     },
 
     animateProofPoints : function() {
