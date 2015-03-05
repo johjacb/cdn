@@ -207,7 +207,10 @@ var bu_fx = {
         var elements = document.getElementsByClassName('odometer');
         for (var index = 0; index < elements.length; ++index) {
             var element = elements[index];
+            // remove the class so the animation doesn't happen
+            element.className = "";
             element.innerHTML = 0;
+            elemtn.className = "odometer";
         }
     },
 
