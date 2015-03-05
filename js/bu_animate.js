@@ -175,7 +175,6 @@ var bu_fx = {
 
             setTimeout(function () {
                 elem.addClass('js-animate');
-                elem.addClass('js-fade-in');
             }, 600);
 
             this.proofPointAnimationReady = false;
