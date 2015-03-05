@@ -174,18 +174,11 @@ var bu_fx = {
             var elem = $('.homepage-animate');
 
             setTimeout(function () {
-                elem.addClass('js-fade-in');
+                elem.addClass('js-animate');
             }, 600);
 
             this.proofPointAnimationReady = false;
 
-        }
-
-        if (window_manager.scrollTop < 100) {
-            // Reset the animation if the user goes to the top.
-            this.proofPointAnimationReady = true;
-            this.resetProofpoints();
-            $('.homepage-animate').removeClass('js-fade-in');
         }
 
     },
