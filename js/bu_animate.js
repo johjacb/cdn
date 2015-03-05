@@ -190,7 +190,7 @@ var bu_fx = {
                 //$(this).find('.uppercase-underlined');
                 var $elem = $(this);
                 setTimeout(function () {
-                    $elem.velocity({'opacity': '1'}, 1000, 'linear');
+                    $elem.$number.addClass('js-fadeIn');
                 }, 600 * i);
             });
 
@@ -335,13 +335,6 @@ var bu_fx = {
             }, module.settings.speed/8);
 
         };
-
-        // reveal the text after delay
-        module.revealText = function() {
-            setTimeout(function () {
-                $(module.settings.textElement).velocity({opacity:1}, 600);
-            }, module.settings.speed/4);
-        }
 
         // Show new statement
         module.showStatement = function () {
