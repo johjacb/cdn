@@ -191,7 +191,7 @@ var bu_fx = {
                 //$(this).find('.uppercase-underlined');
                 var $elem = $(this);
                 setTimeout(function () {
-                    $elem.$number.addClass('js-fadeIn');
+                    $elem.addClass('js-fadeIn');
                 }, 600 * i);
             });
 
