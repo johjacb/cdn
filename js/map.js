@@ -82,7 +82,7 @@ function createLocationSelect(map) {
     }
     
     if(map.hasOwnProperty('offices')) {
-        if( map.offices.length >= 1){
+        // if( map.offices.length >= 1){
             var $select = $('<select />');
             var $option = $('<option />').text('Select an Office');
             $select.append($option);
@@ -96,7 +96,7 @@ function createLocationSelect(map) {
             $select.change(function() {
                 officeSelectChange(getCurrentlySelectedLocation($(this).val()));
             });
-        }
+        // }
     }
 
     if(map.hasOwnProperty('parking')) {
