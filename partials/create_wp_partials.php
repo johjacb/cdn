@@ -1,4 +1,12 @@
 <?php
+
+// Disallow access to this script unless run from the command line
+if(php_sapi_name() != "cli") {
+        header("HTTP/1.1 403 Unauthorized" );
+        echo 'This file may not be accessed from the web';
+        exit;
+}
+
 // This file interprets a list of Cascade PHP templates and outputs
 // static HTML files from those templates
 
