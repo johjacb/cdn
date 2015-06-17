@@ -55,7 +55,7 @@ foreach($filepaths as $filepath) {
 	$filepathArray = explode('/', $filepath);
 	$filename = end($filepathArray);
 	$filename = substr($filename, 0, strpos($filename, '.'));
-	$filename .= '.html';
+	$filename .= '.twig';
 	$partial = createPartial($filepath);
 	file_put_contents($filename, $partial);
 }
