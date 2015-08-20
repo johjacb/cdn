@@ -30,9 +30,12 @@ $(document).ready(function() {
     if( office != null)
         $("#office_select").children().val(office);
     if( location != null)
-        $("#loc_select").children().val(office_select);
+        $("#loc_select").children().val(location);
     if( parking != null)
         $("#parking_select").children().val(parking);
+
+    // reinitialize it
+    initializeSelectedMap($(this));
 });
 
 function initializeSelectedMap($mapSelect) {
