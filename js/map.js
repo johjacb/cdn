@@ -35,7 +35,7 @@ $(document).ready(function() {
         $("#parking_select").children().val(parking);
 
     // reinitialize it
-    initializeSelectedMap($(this));
+    initializeSelectedMap($select);
 });
 
 function initializeSelectedMap($mapSelect) {
