@@ -27,7 +27,7 @@ $(document).ready(function() {
     
     if( map != null)
         $("#map_select").children().val(map);
-        initializeSelectedMap(getCurrentlySelectedLocation($select));
+        initializeSelectedMap($select);
     if( office != null){
         $("#office_select").children().val(office);
         officeSelectChange(getCurrentlySelectedLocation(office));
