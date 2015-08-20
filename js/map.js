@@ -36,7 +36,7 @@ $(document).ready(function() {
             officeValues.push($(this).val());
         });
 
-        if( $.inArray(office, officeValues) == -1 )
+        if( $.inArray(office, officeValues) != -1 )
             officeSelectChange(getCurrentlySelectedLocation(office));
     }
     if( location != null){
@@ -46,7 +46,7 @@ $(document).ready(function() {
             locationValues.push($(this).val());
         });
 
-        if( $.inArray(location, locationValues) == -1)
+        if( $.inArray(location, locationValues) != -1)
             locationSelectChange(getCurrentlySelectedLocation(location));
     }
     if( parking != null){
@@ -56,7 +56,7 @@ $(document).ready(function() {
             parkingValues.push($(this).val());
         });
 
-        if( $.inArray(parking, parkingValues) == -1 )
+        if( $.inArray(parking, parkingValues) != -1 )
             parkingSelectChange(getCurrentlySelectedLocation(parking));
     }
 });
