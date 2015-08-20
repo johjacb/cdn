@@ -21,18 +21,18 @@ $(document).ready(function() {
 
     // see if there are any url parameters
     var map = $.urlParam('map');
-    var office = $.urlParam'parking');
+    var office = $.urlParam('parking');
     var location = $.urlParam('location');
     var parking = $.urlParam('parking');
     
     if( map != null)
         $("#map_select").children().val(map)
-    if( location != null)
-        $("#office_select").children().val(location)
-    if( parking != null)
-        $("#loc_select").children().val(parking)
     if( office != null)
-        $("#parking_select").children().val(office)
+        $("#office_select").children().val(office)
+    if( location != null)
+        $("#loc_select").children().val(office_select)
+    if( parking != null)
+        $("#parking_select").children().val(parking)
 });
 
 function initializeSelectedMap($mapSelect) {
