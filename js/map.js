@@ -25,46 +25,48 @@ $(document).ready(function() {
     var location = $.urlParam('location');
     var parking = $.urlParam('parking');
     
-    if( map != null){
-        $("#map_select").children().val(map);
-        initializeSelectedMap($select);
-    }
-    if( office != null){
-        $("#office_select").children().val(office);
-
-        var x = $("#office_select")
-        var officeValues = [];
-        for (i = 0; i < x.length; i++) {
-            officeValues.push( x.children()[0].options[i].value);
+    setTimeout(function(){
+        if( map != null){
+            $("#map_select").children().val(map);
+            initializeSelectedMap($select);
         }
+        if( office != null){
+            $("#office_select").children().val(office);
 
-        if( $.inArray(office, officeValues) != -1 )
-            officeSelectChange(getCurrentlySelectedLocation(office));
-    }
-    if( location != null){
-        $("#loc_select").children().val(location);
+            var x = $("#office_select").children()[0].options;
+            var officeValues = [];
+            for (i = 0; i < x.length; i++) {
+                officeValues.push( x[i].value);
+            }
 
-        var x = $("#loc_select")
-        var locationValues = [];
-        for (i = 0; i < x.length; i++) {
-            locationValues.push( x.children()[0].options[i].value);
+            if( $.inArray(office, officeValues) != -1 )
+                officeSelectChange(getCurrentlySelectedLocation(office));
         }
+        if( location != null){
+            $("#loc_select").children().val(location);
 
-        if( $.inArray(location, locationValues) != -1)
-            locationSelectChange(getCurrentlySelectedLocation(location));
-    }
-    if( parking != null){
-        $("#parking_select").children().val(parking);
+            var x = $("#loc_select").children()[0].options;
+            var locationValues = [];
+            for (i = 0; i < x.length; i++) {
+                locationValues.push( x[i].value);
+            }
 
-        var x = $("#parking_select")
-        var parkingValues = [];
-        for (i = 0; i < x.length; i++) {
-            parkingValues.push( x.children()[0].options[i].value);
+            if( $.inArray(location, locationValues) != -1)
+                locationSelectChange(getCurrentlySelectedLocation(location));
         }
+        if( parking != null){
+            $("#parking_select").children().val(parking);
 
-        if( $.inArray(parking, parkingValues) != -1 )
-            parkingSelectChange(getCurrentlySelectedLocation(parking));
-    }
+            var x = $("#parking_select").children()[0].options;
+            var parkingValues = [];
+            for (i = 0; i < x.length; i++) {
+                parkingValues.push( x[i].value);
+            }
+
+            if( $.inArray(parking, parkingValues) != -1 )
+                parkingSelectChange(getCurrentlySelectedLocation(parking));
+        }
+    }, 1000);
 });
 
 function initializeSelectedMap($mapSelect) {
