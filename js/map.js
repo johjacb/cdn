@@ -21,24 +21,24 @@ $(document).ready(function() {
 
     // see if there are any url parameters
     var map = $.urlParam('map');
-    var office = $.urlParam('parking');
+    var office = $.urlParam('office');
     var location = $.urlParam('location');
     var parking = $.urlParam('parking');
     
     if( map != null)
         $("#map_select").children().val(map);
-        initializeSelectedMap($select);
+        initializeSelectedMap(getCurrentlySelectedLocation($select));
     if( office != null){
         $("#office_select").children().val(office);
-        officeSelectChange(office);
+        officeSelectChange(getCurrentlySelectedLocation(office));
     }
     if( location != null){
         $("#loc_select").children().val(location);
-        locationSelectChange(location);
+        locationSelectChange(getCurrentlySelectedLocation(location));
     }
     if( parking != null){
         $("#parking_select").children().val(parking);
-        parkingSelectChange(parking);
+        parkingSelectChange(getCurrentlySelectedLocation(parking));
     }
 });
 
