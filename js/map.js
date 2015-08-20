@@ -11,12 +11,28 @@ $(document).ready(function() {
     $select.children().first().attr("selected", "selected");
     $selectedOption = $select.children().first();
     initialize(locations[$selectedOption.data("type")][$select.val()], $selectedOption.data("type"));
+
     $select.change(function() {
         initializeSelectedMap($(this));
     });
     $('#zoom_out').click(function() {
         initializeSelectedMap($select);
     });
+
+    // see if there are any url parameters
+    var map = $.urlParam('map');
+    var office = $.urlParam'parking');
+    var location = $.urlParam('location');
+    var parking = $.urlParam('parking');
+    
+    if( map != null)
+        $("#map_select").children().val(map)
+    if( location != null)
+        $("#office_select").children().val(location)
+    if( parking != null)
+        $("#loc_select").children().val(parking)
+    if( office != null)
+        $("#parking_select").children().val(office)
 });
 
 function initializeSelectedMap($mapSelect) {
@@ -339,4 +355,14 @@ function makeCollectionMap(collection) {
     }
 
     map.panToBounds(bounds);
+}
+
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
 }
