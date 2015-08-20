@@ -27,15 +27,19 @@ $(document).ready(function() {
     
     if( map != null)
         $("#map_select").children().val(map);
-    if( office != null)
+        initializeSelectedMap($select);
+    if( office != null){
         $("#office_select").children().val(office);
-    if( location != null)
+        officeSelectChange(office);
+    }
+    if( location != null){
         $("#loc_select").children().val(location);
-    if( parking != null)
+        locationSelectChange(location);
+    }
+    if( parking != null){
         $("#parking_select").children().val(parking);
-
-    // reinitialize it
-    initializeSelectedMap($select);
+        parkingSelectChange(parking);
+    }
 });
 
 function initializeSelectedMap($mapSelect) {
