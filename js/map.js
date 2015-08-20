@@ -31,15 +31,33 @@ $(document).ready(function() {
     }
     if( office != null){
         $("#office_select").children().val(office);
-        officeSelectChange(getCurrentlySelectedLocation(office));
+        officeValues = [];
+        $('#office_select').each(function() {
+            officeValues.push($(this).val());
+        });
+        
+        if( $.inArray(office, officeValues) )
+            officeSelectChange(getCurrentlySelectedLocation(office));
     }
     if( location != null){
         $("#loc_select").children().val(location);
-        locationSelectChange(getCurrentlySelectedLocation(location));
+        locationValues = [];
+        $('#loc_select').each(function() {
+            locationValues.push($(this).val());
+        });
+
+        if( $.inArray(location, locationValues) )
+            locationSelectChange(getCurrentlySelectedLocation(location));
     }
     if( parking != null){
         $("#parking_select").children().val(parking);
-        parkingSelectChange(getCurrentlySelectedLocation(parking));
+        parkingValues = [];
+        $('#parking_select').each(function() {
+            parkingValues.push($(this).val());
+        });
+
+        if( $.inArray(parking, parkingValues) )
+            parkingSelectChange(getCurrentlySelectedLocation(parking));
     }
 });
 
@@ -155,49 +173,43 @@ function getCurrentlySelectedLocation(location) {
 
 function locationSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    if( location.hasOwnProperty('location') ){
-        var locationObj = mapObj.locations[location.location];
-        var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
+    var locationObj = mapObj.locations[location.location];
+    var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
-        if (location.type == 'single') {
-            deleteMarkers();
-            panAndMarkMap(locationObj);
-        } else if (location.type == 'collection') {
-            deleteMarkers();
-            panAndMarkMap(locationObj);
-        }
+    if (location.type == 'single') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
+    } else if (location.type == 'collection') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
     }
 }
 
 function officeSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    if( location.hasOwnProperty('location') ){
-        var locationObj = mapObj.offices[location.location];
-        var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
+    var locationObj = mapObj.offices[location.location];
+    var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
-        if (location.type == 'single') {
-            deleteMarkers();
-            panAndMarkMap(locationObj);
-        } else if (location.type == 'collection') {
-            deleteMarkers();
-            panAndMarkMap(locationObj);
-        }
+    if (location.type == 'single') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
+    } else if (location.type == 'collection') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
     }
 }
 
 function parkingSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    if( location.hasOwnProperty('location') ){
-        var locationObj = mapObj.parking[location.location];
-        var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
+    var locationObj = mapObj.parking[location.location];
+    var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
-        if (location.type == 'single') {
-            deleteMarkers();
-            panAndMarkMap(locationObj);
-        } else if (location.type == 'collection') {
-            deleteMarkers();
-            panAndMarkMap(locationObj);
-        }
+    if (location.type == 'single') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
+    } else if (location.type == 'collection') {
+        deleteMarkers();
+        panAndMarkMap(locationObj);
     }
 }
 
