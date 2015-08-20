@@ -35,7 +35,7 @@ $(document).ready(function() {
         var x = $("#office_select")
         var officeValues = [];
         for (i = 0; i < x.length; i++) {
-            officeValues.push( x.options[i].text);
+            officeValues.push( x.children()[0].options[i].value);
         }
 
         if( $.inArray(office, officeValues) != -1 )
@@ -47,7 +47,7 @@ $(document).ready(function() {
         var x = $("#loc_select")
         var locationValues = [];
         for (i = 0; i < x.length; i++) {
-            locationValues.push( x.options[i].text);
+            locationValues.push( x.children()[0].options[i].value);
         }
 
         if( $.inArray(location, locationValues) != -1)
@@ -59,7 +59,7 @@ $(document).ready(function() {
         var x = $("#parking_select")
         var parkingValues = [];
         for (i = 0; i < x.length; i++) {
-            parkingValues.push( x.options[i].text);
+            parkingValues.push( x.children()[0].options[i].value);
         }
 
         if( $.inArray(parking, parkingValues) != -1 )
