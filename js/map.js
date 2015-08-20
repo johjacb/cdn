@@ -155,7 +155,7 @@ function getCurrentlySelectedLocation(location) {
 
 function locationSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    if( typeof location.location == 'function' ){
+    if( location.hasOwnProperty('location') ){
         var locationObj = mapObj.locations[location.location];
         var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
@@ -171,7 +171,7 @@ function locationSelectChange(location) {
 
 function officeSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    if( typeof location.location == 'function' ){
+    if( location.hasOwnProperty('location') ){
         var locationObj = mapObj.offices[location.location];
         var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
@@ -187,7 +187,7 @@ function officeSelectChange(location) {
 
 function parkingSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    if( typeof location.location == 'function' ){
+    if( location.hasOwnProperty('location') ){
         var locationObj = mapObj.parking[location.location];
         var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
