@@ -26,13 +26,13 @@ $(document).ready(function() {
     var parking = $.urlParam('parking');
     
     if( map != null)
-        $("#map_select").children().val(map)
+        $("#map_select").children().val(map);
     if( office != null)
-        $("#office_select").children().val(office)
+        $("#office_select").children().val(office);
     if( location != null)
-        $("#loc_select").children().val(office_select)
+        $("#loc_select").children().val(office_select);
     if( parking != null)
-        $("#parking_select").children().val(parking)
+        $("#parking_select").children().val(parking);
 });
 
 function initializeSelectedMap($mapSelect) {
