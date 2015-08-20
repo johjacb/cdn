@@ -25,9 +25,10 @@ $(document).ready(function() {
     var location = $.urlParam('location');
     var parking = $.urlParam('parking');
     
-    if( map != null)
+    if( map != null){
         $("#map_select").children().val(map);
         initializeSelectedMap($select);
+    }
     if( office != null){
         $("#office_select").children().val(office);
         officeSelectChange(getCurrentlySelectedLocation(office));
@@ -154,43 +155,49 @@ function getCurrentlySelectedLocation(location) {
 
 function locationSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    var locationObj = mapObj.locations[location.location];
-    var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
+    if( typeof location.location == 'function' ){
+        var locationObj = mapObj.locations[location.location];
+        var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
-    if (location.type == 'single') {
-        deleteMarkers();
-        panAndMarkMap(locationObj);
-    } else if (location.type == 'collection') {
-        deleteMarkers();
-        panAndMarkMap(locationObj);
+        if (location.type == 'single') {
+            deleteMarkers();
+            panAndMarkMap(locationObj);
+        } else if (location.type == 'collection') {
+            deleteMarkers();
+            panAndMarkMap(locationObj);
+        }
     }
 }
 
 function officeSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    var locationObj = mapObj.offices[location.location];
-    var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
+    if( typeof location.location == 'function' ){
+        var locationObj = mapObj.offices[location.location];
+        var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
-    if (location.type == 'single') {
-        deleteMarkers();
-        panAndMarkMap(locationObj);
-    } else if (location.type == 'collection') {
-        deleteMarkers();
-        panAndMarkMap(locationObj);
+        if (location.type == 'single') {
+            deleteMarkers();
+            panAndMarkMap(locationObj);
+        } else if (location.type == 'collection') {
+            deleteMarkers();
+            panAndMarkMap(locationObj);
+        }
     }
 }
 
 function parkingSelectChange(location) {
     var mapObj = locations[location.type][location.map];
-    var locationObj = mapObj.parking[location.location];
-    var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
+    if( typeof location.location == 'function' ){
+        var locationObj = mapObj.parking[location.location];
+        var position = new google.maps.LatLng(locationObj.lat, locationObj.long);
 
-    if (location.type == 'single') {
-        deleteMarkers();
-        panAndMarkMap(locationObj);
-    } else if (location.type == 'collection') {
-        deleteMarkers();
-        panAndMarkMap(locationObj);
+        if (location.type == 'single') {
+            deleteMarkers();
+            panAndMarkMap(locationObj);
+        } else if (location.type == 'collection') {
+            deleteMarkers();
+            panAndMarkMap(locationObj);
+        }
     }
 }
 
