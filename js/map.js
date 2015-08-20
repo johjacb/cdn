@@ -31,30 +31,36 @@ $(document).ready(function() {
     }
     if( office != null){
         $("#office_select").children().val(office);
-        officeValues = [];
-        $('#office_select').each(function() {
-            officeValues.push($(this).val());
-        });
+
+        var x = $("#office_select")
+        var officeValues = [];
+        for (i = 0; i < x.length; i++) {
+            officeValues.push( x.options[i].text);
+        }
 
         if( $.inArray(office, officeValues) != -1 )
             officeSelectChange(getCurrentlySelectedLocation(office));
     }
     if( location != null){
         $("#loc_select").children().val(location);
-        locationValues = [];
-        $('#loc_select').each(function() {
-            locationValues.push($(this).val());
-        });
+
+        var x = $("#loc_select")
+        var locationValues = [];
+        for (i = 0; i < x.length; i++) {
+            locationValues.push( x.options[i].text);
+        }
 
         if( $.inArray(location, locationValues) != -1)
             locationSelectChange(getCurrentlySelectedLocation(location));
     }
     if( parking != null){
         $("#parking_select").children().val(parking);
-        parkingValues = [];
-        $('#parking_select').each(function() {
-            parkingValues.push($(this).val());
-        });
+
+        var x = $("#parking_select")
+        var parkingValues = [];
+        for (i = 0; i < x.length; i++) {
+            parkingValues.push( x.options[i].text);
+        }
 
         if( $.inArray(parking, parkingValues) != -1 )
             parkingSelectChange(getCurrentlySelectedLocation(parking));
