@@ -432,7 +432,7 @@
 
     /* Tacking on some css to make it responsive? */
 
-.flip-clock-wrapper {margin: 2em 0;}
+.flip-clock-wrapper {margin: 2em 1em;}
 .flip-clock-wrapper ul {width: 35px;padding:0;height: 60px;margin: 0 2px;}
 .flip-clock-wrapper ul li {line-height: 60px;}
 .flip-clock-wrapper ul li a div div.inn {border-radius: 3px;font-size: 30px;}
