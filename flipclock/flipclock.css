@@ -432,19 +432,20 @@
 
     /* Tacking on some css to make it responsive? */
 
-.flip-clock-wrapper ul {width: 40px;height: 78px;margin: 0 2px;}
-.flip-clock-wrapper ul li {line-height: 78px;}
-.flip-clock-wrapper ul li a div div.inn {border-radius: 3px;font-size: 50px;}
+.flip-clock-wrapper {margin: 2em 0;}
+.flip-clock-wrapper ul {width: 35px;padding:0;height: 60px;margin: 0 2px;}
+.flip-clock-wrapper ul li {line-height: 60px;}
+.flip-clock-wrapper ul li a div div.inn {border-radius: 3px;font-size: 30px;}
 .flip-clock-wrapper ul li a div.down {border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;}
 .flip-clock-wrapper ul li a div.up:after {top: 38px;height: 2px;}
 
 .flip-clock-dot.top {
-top: 10px;
+top: 21px;
 }
 
 .flip-clock-dot.bottom {
 bottom: 0;
-top: 25px;
+top: 34px;
 }
 
 .flip-clock-dot{
@@ -454,5 +455,13 @@ height: 7px;
 
 .flip-clock-divider {
 width: 17px;
-height: 45px;
+height: 60px;
+}
+
+.flip-clock-divider .flip-clock-label {
+  right: -54px;
+}
+
+.flip-clock-divider.minutes .flip-clock-label {
+  right: -58px;
 }
